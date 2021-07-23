@@ -212,10 +212,135 @@ public class Test {
 			System.out.println("二桁の自然数を入力してください");
 			num = sc.nextInt();
 		}while(num < 10 || num > 99);
+		sc.close();
 	}
+	
+	static void listOneSixteen() {
+		for(int i = 1; i < 10; i++) {
+			for(int j = 1; j < 10; j++) {
+				System.out.printf("%3d", i * j);
+			}
+			System.out.println();
+		}
+	}
+	
+	static void pracOneEleven() {
+		System.out.println("   |  1  2  3  4  5  6  7  8  9");
+		System.out.println("---+---------------------------");
+		for(int i = 1; i < 10; i++) {
+			System.out.print(" " + i + " |");
+			for(int j = 1; j < 10; j++) {
+				System.out.printf("%3d", i * j);
+			}
+			System.out.println();
+		}
+	}
+	
+	static void pracOneTwelve() {
+		System.out.print("   |");
+		for (int i = 1;i <= 9; i++)
+			System.out.printf("%3d", i);
+		System.out.println("\n---+---------------------------");
+
+		for (int i = 1; i <= 9; i++) {
+			System.out.printf("%2d |", i);
+			for (int j = 1; j <= 9; j++)
+				System.out.printf("%3d", i + j);
+			System.out.println();
+		}
+	}
+	
+	static void pracOneThirteen() {
+		Scanner sc = stdIn();
+		int num;
+		do {
+			System.out.println("100以下の整数を入力してください");
+			num = sc.nextInt();
+		}while(num <=  0 || num > 100);
+		for(int i = 0; i < num; i++) {
+			System.out.println("*".repeat(num));
+		}
+	}
+	
+	static void listOneSeventeen() {
+		Scanner sc = stdIn();
+		int n;
+		do{
+			System.out.println("短辺の長さを入力してください");
+			n = sc.nextInt();
+		}while(n <= 0);
+		for(int i = 0; i < n; i++) {
+			System.out.println("*".repeat(i + 1));
+		}
+	}
+	
+	static void traiangleLU(int n) {
+		int length = n;
+		for(int i = 1; i <= length; i++) {
+			if(!(i == length)) {
+				int space = length - i;
+				System.out.println(" ".repeat(space) + "*".repeat(i));
+			}else {
+				System.out.println("*".repeat(length));
+			}
+		}
+	}
+	
+	static void traiangleRU(int n) {
+		int length = n;
+		for(int i = length; i >= 1; i--) {
+			if(i == length) {
+				System.out.println("*".repeat(i));
+			}else {
+				int space = length - i;
+				String str = " ".repeat(space) + "*".repeat(i);
+				System.out.println(str);
+			}
+		}
+	}
+	
+	static void traiangleRB(int n) {
+		int length = n;
+		for(int i = 1; i <= length; i++) {
+			if(!(i == length)) {
+				int space = length - i;
+				String str = " ".repeat(space) + "*".repeat(i);
+				System.out.println(str);
+			}else {
+				System.out.println("*".repeat(length));
+			}
+		}
+	}
+	
+	static void spira(int n) {
+		int step = n;
+		for(int i = 1; i <= step * 2 -1; i += 2) {
+			int space = (step * 2 - 1 - i) / 2;
+			if(!(i == step)) {
+				System.out.println(" ".repeat(space) + "*".repeat(i));
+			}else {
+				System.out.println("*".repeat(step * 2 - 1));
+			}
+		}
+	}
+	
+	static void npira(int n) {
+		int step = n;
+		int col = 1;
+		for(int i = 1; i <= step * 2 -1; i += 2) {
+			int space = (step * 2 - 1 - i) / 2;
+			if(!(i == step)) {
+				System.out.println(" ".repeat(space) + Integer.toString(col).repeat(i));
+			}else {
+				System.out.println(Integer.toString(col).repeat(step * 2 - 1));
+			}
+			col++;
+		}
+	}
+	
 	public static void main(String[] args) {
 		
-		System.out.prinln("mac");
+		npira(4);
 		
 	}
 
