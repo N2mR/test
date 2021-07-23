@@ -215,7 +215,7 @@ public class Test {
 	}
 	public static void main(String[] args) {
 		
-		colOneSeven();
+		System.out.prinln("mac");
 		
 	}
 
