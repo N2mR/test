@@ -340,7 +340,7 @@ public class Test {
 	
 	public static void main(String[] args) {
 		
-		npira(4);
+		spira(10);
 		
 	}
 
