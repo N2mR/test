@@ -69,7 +69,45 @@ public class Chapter2 {
 		return newArray;
 	}
 	
+	static void swap(int[] ary, int idx1, int idx2) {
+		int one = ary[idx1];
+		int two = ary[idx2];
+		System.out.println(one + "と" + two + "を交換します");
+		ary[idx1] = two;
+		ary[idx2] = one;
+	}
+	
+	static void reverse(int[] ary) {
+		int[] newArray = ary;
+		for(int i = 0; i < newArray.length / 2; i++) {
+			int idx1 = i;
+			int idx2 = newArray.length - i - 1;
+			swap(newArray, idx1, idx2);
+		}
+	}
+	
+	static int sumOf(int[] ary) {
+		int sum = 0;
+		for(int n: ary) {
+			sum += n;
+		}
+		return sum;
+	}
+	
+	static int[] copy(int[] a, int[] b) {
+		int[] newA = a;
+		for(int i = 0; i < b.length; i++) {
+			newA[i] = b[i];
+		}
+		return newA;
+	}
+	
 	public static void main(String[] args) {
+		
+		int[] ary1 = {1,2,3,4,5,6,7,8,9};
+		int[] ary2 = {9,8,7,6,5,4,3,2,1};
+		int[] newA = copy(ary2, ary1);
+		outPut(newA);
 		
 		
 		
